@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PolatsanAnaActivity">
+
+
+    <include layout="@layout/content_main2" />
+
+    <Button
+        android:id="@+id/mhrs"
+        android:layout_width="172dp"
+        android:layout_height="62dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="20dp"
+        android:text="MHRS"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/edevlet"
+        android:layout_width="166dp"
+        android:layout_height="62dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="310dp"
+        android:layout_marginBottom="20dp"
+        android:text="E-DEVLET"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/sedas"
+        android:layout_width="172dp"
+        android:layout_height="62dp"
+        android:layout_gravity="bottom|left"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="20dp"
+        android:text="İETT İSTANBUL"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/saski"
+        android:layout_width="163dp"
+        android:layout_height="62dp"
+        android:layout_gravity="bottom|left"
+        android:layout_marginLeft="305dp"
+        android:layout_marginBottom="20dp"
+        android:text="İBB BEYAZ MASASI"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText" />
+
+
+    <Button
+        android:id="@+id/sakaryabel"
+        android:layout_width="213dp"
+        android:layout_height="62dp"
+        android:layout_gravity="bottom|left"
+        android:layout_marginLeft="525dp"
+        android:layout_marginBottom="20dp"
+        android:text="BEYKOZ Belediyesi"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText" />
+
+
+</FrameLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <item android:title="Hizmetler">
+        <menu>
+            <item
+                android:id="@+id/belediye"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Samsun İlkadım Belediyesi" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.designsrich.polatsanonlinevideoplaylist">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".PolatsanAnaActivity"
+            android:parentActivityName=".PolatsanAnaActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="www.designsrich.com" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="pltsan.com" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SedasMainActivity"
+            android:label="Sedaş"
+            android:theme="@style/SayfaGecis">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PolatsanAnaActivity" />
+        </activity>
+        <activity
+            android:name=".AgdasMainActivity"
+            android:label="Agdaş"
+            android:theme="@style/SayfaGecis">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PolatsanAnaActivity" />
+        </activity>
+        <activity
+            android:name=".BuyukSehirBelActivity"
+            android:label="Sakarya Büyükşehir Belediyesi"
+            android:theme="@style/SayfaGecis">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PolatsanAnaActivity" />
+        </activity>
+        <activity
+            android:name=".EdevletMainActivity"
+            android:label="E-Devlet"
+            android:theme="@style/SayfaGecis">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PolatsanAnaActivity" />
+        </activity>
+        <activity
+            android:name=".MhrsMainActivity"
+            android:label="MHRS Randevu Sistemi"
+            android:theme="@style/SayfaGecis">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PolatsanAnaActivity" />
+        </activity>
+        <activity
+            android:name=".SaskiMainActivity"
+            android:label="Saski"
+            android:theme="@style/SayfaGecis">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PolatsanAnaActivity" />
+        </activity>
+    </application>
+
+</manifest>
