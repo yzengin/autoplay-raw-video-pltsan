@@ -2,12 +2,15 @@ package com.designsrich.polatsanonlinevideoplaylist;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.net.http.SslError;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -43,7 +46,7 @@ public class SedasMainActivity extends Activity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         setUpWidgets();
-        setupBrowser("https://iett.istanbul/");
+        setupBrowser("https://iett.istanbul");
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.floatingActionButton );
@@ -81,7 +84,7 @@ public class SedasMainActivity extends Activity implements View.OnClickListener 
     }
 
     public void startHandler() {
-        handler2.postDelayed(r, 1 * 60 * 1000);
+        handler2.postDelayed(r, 5 * 60 * 1000);
         Log.d("HandlerRun", "startHandlerMain");
     }
 
@@ -141,22 +144,35 @@ public class SedasMainActivity extends Activity implements View.OnClickListener 
 
         myWebChromeClient = new MyWebChromeClient(SedasMainActivity.this, childLayout, browserLayout, titleText);
         myWebView.setWebChromeClient(myWebChromeClient);
-
+        myWebView.setVerticalScrollBarEnabled (false);
+        myWebView.setBackgroundColor(Color.TRANSPARENT);
         myWebView.setWebViewClient(new WebViewClient() {
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 Log.v(Constants.LOG_TAG, "URL: " + url);
                 view.loadUrl(url);
+                System.out.println("aaaaaaaaaaaa"+url.toString());
+                System.out.println("aaaaaaaaaaaa"+view.getTitle().toString());
                 return false;
             }
 
             //If no internet, redirect to error page
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                 Log.v(Constants.LOG_TAG, "Error: " + failingUrl);
+                System.out.println("aaaaaaaaaaaa errr cc "+errorCode);
+                System.out.println("aaaaaaaaaaaa errr dd "+description);
+                System.out.println("aaaaaaaaaaaa errr ff "+failingUrl);
             }
 
             public void onPageFinished(WebView view, String url) {
                 Log.v(Constants.LOG_TAG, "Finished: " + url);
+                System.out.println("aaaaaaaaaaaa errr uuuu "+url);
             }
+
+            @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError er) {
+                handler.proceed(); // Ignore SSL certificate errors
+            }
+
         });
         myWebView.loadUrl(url);
     }

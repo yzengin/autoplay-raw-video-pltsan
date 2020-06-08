@@ -2,12 +2,14 @@ package com.designsrich.polatsanonlinevideoplaylist;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.http.SslError;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -157,6 +159,12 @@ public class SaskiMainActivity extends Activity implements View.OnClickListener 
             public void onPageFinished(WebView view, String url) {
                 Log.v(Constants.LOG_TAG, "Finished: " + url);
             }
+
+            @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError er) {
+                handler.proceed(); // Ignore SSL certificate errors
+            }
+
         });
         myWebView.loadUrl(url);
     }
